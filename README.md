@@ -8,14 +8,14 @@ The system automatically adjusts lighting and simulates a heating system based o
 ---
 
 ## ⚙️ Features
-- 🌞 Light intensity monitoring using **GY-302 (BH1750) sensor**
-- 💡 Automatic brightness control using **PWM**
-- 🌡️ Temperature monitoring using **TMP102 sensor**
-- 🔥 Thermostat functionality with configurable temperature
-- 💾 Storage of temperature setpoint in **EEPROM (25AA040A)**
-- 🔄 Automatic restoration of saved settings on startup
-- ⚡ Real-time system response
-- 🔌 Serial communication for debugging and monitoring
+-  Light intensity monitoring using **GY-302 (BH1750) sensor**
+-  Automatic brightness control using **PWM**
+-  Temperature monitoring using **TMP102 sensor**
+-  Thermostat functionality with configurable temperature
+-  Storage of temperature setpoint in **EEPROM (25AA040A)**
+-  Automatic restoration of saved settings on startup
+-  Real-time system response
+-  Serial communication for debugging and monitoring
 
 ---
 

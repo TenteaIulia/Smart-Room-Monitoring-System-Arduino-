@@ -4,14 +4,14 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 
-// I2C adrese (tipice) 
-uint8_t BH1750_ADDR = 0x23; // GY-302 
-const uint8_t EEPROM24_ADDR = 0x50;   // 24C32 cu A0/A1/A2 la GND
-const uint16_t EXT_ADDR_TSET = 0;     // unde salvezi Tset in EEPROM externa
+// I2C adrese  
+uint8_t BH1750_ADDR = 0x23; 
+const uint8_t EEPROM24_ADDR = 0x50;   
+const uint16_t EXT_ADDR_TSET = 0;     
 
 // Pini 
-const int PIN_LED_PWM  = 9;  // lumina PWM
-const int PIN_HEAT_LED = 8;  // incalzire ON/OFF
+const int PIN_LED_PWM  = 9;  
+const int PIN_HEAT_LED = 8;  
 const int PIN_BTN_UP   = 2;  
 const int PIN_BTN_DOWN = 3; 
 const int PIN_BTN_OK   = 4;
@@ -30,9 +30,9 @@ unsigned long savedMs = 0;
 
 
 // Control lumina 
-float LUX_SET  = 110.0;   // lux tinta
-float KpLux    = 0.5;    // ajustabil
-float alphaLux = 0.2;    // filtrarepai 
+float LUX_SET  = 110.0;   
+float KpLux    = 0.5;    
+float alphaLux = 0.2;    
 float luxFilt  = 0.0;
 bool luxInit = false;
 int pwmOut     = 0;
@@ -165,7 +165,7 @@ void setup() {
 }
 
 void loop() {
-  // ---- Citiri senzori ----
+  // Citiri senzori
   float lux = bh1750ReadLux();
   float T = lm35ReadC();
 
@@ -191,25 +191,25 @@ if (lux >= 0) {
     pwmOut = constrain(pwmOut, 0, 255);
   }
 
-  //---- LED-ul Active-Low ----
+  // LED-ul Active-Low 
   analogWrite(PIN_LED_PWM,255 - pwmOut);
 
 }
 
-  // ---- Termostat cu histerezis ----
+  // Termostat cu histerezis 
   if (!isnan(T)) {
     if (!heatOn && T < Tset) heatOn = true;
     else if (heatOn && T > (Tset + HYST)) heatOn = false;
   }
   digitalWrite(PIN_HEAT_LED, heatOn ? HIGH : LOW);
   
-  // --- Citire butoane (click la apasare) ---
+  // Citire butoane 
   bool up    = clicked(bUp);
   bool down  = clicked(bDown);
   bool ok    = clicked(bOk);
   bool back  = clicked(bBack);
 
-  // --- UI state machine ---
+  // UI state machine 
   if (screen == SCR_MENU) {
     if (up)   menuIndex = (menuIndex + 1) % 2;   // 2 optiuni
     if (down) menuIndex = (menuIndex + 1) % 2;   // 2 optiuni
@@ -245,7 +245,7 @@ if (lux >= 0) {
     
     String l1 = "Tset: " + String(Tset,1) + String((char)223);
 
-    // mic feedback dupa save "OK" pentru ~800ms
+    // Mic feedback dupa save "OK" pentru ~800ms
     if (savedBlink && millis() - savedMs < 800) {
       // pune un indicator la final
       if (l1.length() < 15) l1 += " ";

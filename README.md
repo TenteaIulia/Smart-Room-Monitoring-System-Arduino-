@@ -70,8 +70,7 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-##  Demo
-*(Add images here)*  
+##  Demo  
 - Circuit setup  
 - Working system  
 - Serial monitor output  
@@ -79,9 +78,8 @@ The system automatically adjusts lighting and simulates a heating system based o
 ---
 
 ##  Possible Improvements
-- Add LCD/OLED display for real-time values  
 - Implement mobile/web dashboard  
-- Add WiFi module (ESP8266 / ESP32)  
+- Add WiFi module (ESP32)  
 - Improve control algorithm (PID controller)  
 - Add multiple rooms support  
 
@@ -91,7 +89,7 @@ The system automatically adjusts lighting and simulates a heating system based o
 - Arduino (C/C++)
 - Embedded Systems Programming
 - PWM Control
-- I2C / SPI Communication
+- I2C, SPI Communication
 - EEPROM Memory Management
 
 ---

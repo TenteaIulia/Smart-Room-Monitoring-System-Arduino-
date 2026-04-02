@@ -1,13 +1,13 @@
-# 🌡️💡 Smart Room Monitoring System (Arduino)
+#  Smart Room Monitoring System (Arduino)
 
-## 📖 Overview
+##  Overview
 This project implements a smart embedded system for monitoring and controlling the **temperature** and **light intensity** inside a room using Arduino.
 
 The system automatically adjusts lighting and simulates a heating system based on sensor data, maintaining a stable and comfortable environment.
 
 ---
 
-## ⚙️ Features
+##  Features
 -  Light intensity monitoring using **GY-302 (BH1750) sensor**
 -  Automatic brightness control using **PWM**
 -  Temperature monitoring using **TMP102 sensor**
@@ -19,9 +19,9 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-## 🧠 System Logic
+##  System Logic
 
-### 💡 Light Control
+###  Light Control
 - Reads ambient light intensity using GY-302
 - Adjusts LED brightness using PWM to maintain constant light level
 - If ambient light decreases → LED brightness increases
@@ -29,7 +29,7 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-### 🌡️ Temperature Control (Thermostat)
+###  Temperature Control (Thermostat)
 - Reads temperature from TMP102 sensor
 - User-defined temperature is stored in EEPROM
 - On startup, the system loads the saved value
@@ -38,11 +38,11 @@ The system automatically adjusts lighting and simulates a heating system based o
 - If temperature < setpoint → heating ON (LED ON)
 - If temperature > setpoint + 0.5°C → heating OFF (LED OFF)
 
-➡️ Hysteresis is used to prevent frequent switching
+ Hysteresis is used to prevent frequent switching
 
 ---
 
-## 🧩 Hardware Components
+##  Hardware Components
 - Arduino board (Uno / Nano)
 - GY-302 (BH1750) Light Sensor
 - TMP102 Temperature Sensor
@@ -53,14 +53,14 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-## 🔌 Communication Protocols
+##  Communication Protocols
 - I2C → GY-302, TMP102
 - SPI → EEPROM (25AA040A)
 - UART (Serial) → Debugging / Monitoring
 
 ---
 
-## 🖥️ How It Works
+##  How It Works
 1. System initializes and reads saved temperature from EEPROM  
 2. Sensors continuously provide real-time data  
 3. Control logic adjusts:
@@ -70,7 +70,7 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-## 📸 Demo
+##  Demo
 *(Add images here)*  
 - Circuit setup  
 - Working system  
@@ -78,7 +78,7 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-## 🚀 Possible Improvements
+##  Possible Improvements
 - Add LCD/OLED display for real-time values  
 - Implement mobile/web dashboard  
 - Add WiFi module (ESP8266 / ESP32)  
@@ -87,7 +87,7 @@ The system automatically adjusts lighting and simulates a heating system based o
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 - Arduino (C/C++)
 - Embedded Systems Programming
 - PWM Control
